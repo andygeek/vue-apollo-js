@@ -1,0 +1,4 @@
+query getCourses {
+	_id
+	title
+}

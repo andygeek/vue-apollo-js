@@ -1,4 +1,8 @@
-query getCourses {
-	_id
-	title
+query {
+  Page {
+    users{
+      id
+      name
+    }
+  }
 }

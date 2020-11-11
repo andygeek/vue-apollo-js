@@ -1,10 +1,10 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <div v-for="course in getCourses" :key="course.id">
-      {{ course.title }} -
-      {{ course.teacher }}
+    <div v-for="prem in chartTypes" :key="prem._id">
+      <h1>{{ prem.name }}</h1>
     </div>
+    <button @click="me">Click me</button>
   </div>
 </template>
 
@@ -16,15 +16,17 @@ export default {
     msg: String
   },
   apollo:{
-    getCourses: gql`
-      query {
-        getCourses {
-          _id
-          title
-          teacher
-        }
-      }
-    `
+  chartTypes: gql`query {
+	  chartTypes{
+      _id
+      name
+    }
+  }`
+  },
+  methods:{
+    me: function(){
+      //console.log(this.Page.users);
+    }
   }
 };
 </script>
